@@ -22,3 +22,7 @@ wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/fdr-mn-compile.sh &
 You have to have already installed the first Masternode and then, create a new sudo user and run : 
 
 sudo wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/fdr-multi-install.sh && bash fdr-multi-install.sh
+
+
+-To Update all of your masternode : 
+sudo wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/update_fdr.sh && bash update_fdr.sh
