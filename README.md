@@ -30,6 +30,9 @@ sudo wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/update_fdr.sh 
 
 To support me : 
 
-BTC : 17QwKznGtZxBdhFk4boY4Rfzgh1hDWny6w /p
-ETH : 0x47859df97366b690f84c2da3546d70bfa61dda66 /p
-FDR : fYWa6E3gthATUF2rThr7TtBaVGa1dm7vR8 /p
+BTC : 17QwKznGtZxBdhFk4boY4Rfzgh1hDWny6w
+
+ETH : 0x47859df97366b690f84c2da3546d70bfa61dda66
+
+FDR : fYWa6E3gthATUF2rThr7TtBaVGa1dm7vR8
+
