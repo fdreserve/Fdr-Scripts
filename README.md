@@ -8,31 +8,31 @@ You can use thes to install on or multiple Masternodes on your Server.
 <b>-For X86_64 First install : 
 You must be logged as root user and use this : </b>
 
-wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-mn-install.sh && bash fdr-mn-install.sh
+<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-mn-install.sh && bash fdr-mn-install.sh</code>
 
 <b>-For Arm32 First install :</b>
 
-wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-arm32-install.sh && bash fdr-arm32-install.sh
+<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-arm32-install.sh && bash fdr-arm32-install.sh</code>
 
 <b>-To install a Mn by compiling source code : </b>
 
-wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-mn-compile.sh && bash fdr-mn-compile.sh
+<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-mn-compile.sh && bash fdr-mn-compile.sh</code>
 
 <b>-For Multi-Masternode install: 
 You have to have already installed the first Masternode and then, create a new sudo user and run : </b>
 
-sudo wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-multi-install.sh && bash fdr-multi-install.sh
+<code>sudo wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-multi-install.sh && bash fdr-multi-install.sh</code>
 
 
 <b>-To Update your masternode : </b>
 
 Run as root :
 
-wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-2-1-4.sh && bash update-2-1-4.sh
+<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-2-1-4.sh && bash update-2-1-4.sh</code>
 
 if you have multi masternode on the same vps, run in each users : 
 
-wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-multi-2-1-4.sh && bash update-multi-2-1-4.sh
+<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-multi-2-1-4.sh && bash update-multi-2-1-4.sh</code>
 
 
 To support me : 
