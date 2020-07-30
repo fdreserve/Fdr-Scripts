@@ -4,13 +4,13 @@ CONFIG_FILE='fdreserve.conf'
 CONFIGFOLDER='/root/.fdreserve'
 COIN_PATH='/usr/local/bin'
 #64 bit only
-COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/v2.1.3/fdr-v2.1.3-arm32.zip'
-COIN_ZIP='fdr-v2.1.3-arm32.zip'
-COIN_PATHPART='fdr-v2.1.3-linux/bin'
+COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/v2.1.4/fdr-v2.1.4-arm32.zip'
+COIN_ZIP='fdr-v2.1.4-arm32.zip'
+COIN_PATHPART='fdr-v2.1.4-linux/bin'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
-BOOTSTRAP_TGZ='http://bootstraps.louloucrypto.fr/fdr/bootstrap.tar.gz'
+BOOTSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
 COIN_PORT=12474
 
 NODEIP=$(curl -s4 icanhazip.com)
@@ -212,17 +212,22 @@ masternode=1
 externalip=$NODEIP
 masternodeaddr=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
-addnode=62.171.143.119:12474 addnode=167.86.118.254:12474 addnode=178.238.237.227:12474 addnode=167.86.108.205:12474 addnode=151.80.43.136:12474 addnode=164.68.100.82:12474 addnode=173.212.211.190:12474 addnode=164.68.96.160:12474 addnode=64.190.204.86:12474 addnode=140.82.54.45:12474 addnode=46.101.223.184:12474 addnode=45.76.47.186:12474 addnode=34.68.199.28:12474 addnode=213.136.77.196:12474 addnode=167.86.75.126:12474 addnode=66.42.114.60:12474 addnode=116.202.165.186:12474 addnode=173.212.206.240:12474 addnode=5.189.144.152:12474 addnode=5.189.186.172:12474 addnode=164.68.115.138:12474 addnode=159.69.251.157:12474 addnode=207.180.203.39:12474 addnode=167.86.114.163:12474 addnode=173.212.192.3:12474 addnode=104.156.252.20:12474 addnode=155.138.237.49:12474 addnode=176.166.187.200:12474
+
+#SeedNodes
+addnode=167.86.119.223
+addnode=164.68.96.160
+addnode=167.86.124.134
+addnode=167.86.93.65
+addnode=164.68.121.216
+addnode=167.86.124.134
+
 EOF
-sleep 1
+
   cd $CONFIGFOLDER
-  rm -rf blocks chainstate peers.dat
+  rm -rf blocks chainstate peers.dat mncache.dat fee_estimates.dat debug.log db.log
+  sleep 1
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
-  echo -e "Extracting BootStrap"
-  tar zxvf bootstrap.tar.gz >/dev/null 2>&1
-  rm -f bootstrap.tar.gz 
-  cd ~/
   sleep 2
 }
 
