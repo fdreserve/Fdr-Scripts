@@ -19,16 +19,17 @@ COIN_NAME='FDReserve'
   cd ~/
   TMP_FOLDER=$(mktemp -d)
   cd $TMP_FOLDER
-  wget --progress=bar:force $COIN_TGZ
-  wget --progress=bar:force $BOOTSTRAP_TGZ
+  wget --progress=bar:force $COIN_TGZ > /dev/null 2>&1
+  wget --progress=bar:force $BOOTSTRAP_TGZ > /dev/null 2>&1
   COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-  tar zxf $COIN_ZIP
+  tar zxf $COIN_ZIP > /dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
   mv bootstrap.dat $CONFIGFOLDER
   sleep 2
   echo -e "Stoping your $COIN_NAME Nodes"
 $COIN_CLI stop > /dev/null 2>&1
 echo -e "Updating $COIN_NAME"
+  systemctl stop FDR*.service
   killall -w $COIN_DAEMON > /dev/null 2>&1 
   cp -p $COIN_DAEMON $COIN_PATH
   cp -p $COIN_CLI $COIN_PATH
