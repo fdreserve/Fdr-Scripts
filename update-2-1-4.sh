@@ -13,8 +13,8 @@ COIN_NAME='FDReserve'
 
 #update lunch
   echo -e "Updating your System"
-apt-get update > /dev/null 2>&1
-apt-get upgrade -y > /dev/null 2>&1
+#apt-get update > /dev/null 2>&1
+#apt-get upgrade -y > /dev/null 2>&1
   echo -e "Prepare to download $COIN_NAME update"
   cd ~/
   TMP_FOLDER=$(mktemp -d)
@@ -29,11 +29,9 @@ apt-get upgrade -y > /dev/null 2>&1
   echo -e "Stoping your $COIN_NAME Nodes"
 $COIN_CLI stop > /dev/null 2>&1
 echo -e "Updating $COIN_NAME"
-  killall $COIN_DAEMON > /dev/null 2>&1 
+  killall -w $COIN_DAEMON > /dev/null 2>&1 
   cp -p $COIN_DAEMON $COIN_CLI $COIN_PATH
-  rm -rf $CONFIGFOLDER/blocks $CONFIGFOLDER/chainstate $CONFIGFOLDER/db.log $CONFIGFOLDER/peers.dat $CONFIGFOLDER/debug.log $CONFIGFOLDER/fee_estimates.dat $CONFIGFOLDER/mncache.dat 
-  $COIN_CLI stop > /dev/null 2>&1
-  killall $COIN_DAEMON > /dev/null 2>&1 
+  rm -rf $CONFIGFOLDER/blocks $CONFIGFOLDER/chainstate $CONFIGFOLDER/db.log $CONFIGFOLDER/peers.dat $CONFIGFOLDER/debug.log $CONFIGFOLDER/fee_estimates.dat $CONFIGFOLDER/mncache.dat  
   rm -f $COIN_ZIP >/dev/null 2>&1
   cd ~/ >/dev/null
   rm -rf $TMP_FOLDER >/dev/null 2>&1
