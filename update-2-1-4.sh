@@ -30,12 +30,13 @@ COIN_NAME='FDReserve'
 $COIN_CLI stop > /dev/null 2>&1
 echo -e "Updating $COIN_NAME"
   killall -w $COIN_DAEMON > /dev/null 2>&1 
-  cp -p $COIN_DAEMON $COIN_CLI $COIN_PATH
+  cp -p $COIN_DAEMON $COIN_PATH
+  cp -p $COIN_CLI $COIN_PATH
   rm -rf $CONFIGFOLDER/blocks $CONFIGFOLDER/chainstate $CONFIGFOLDER/db.log $CONFIGFOLDER/peers.dat $CONFIGFOLDER/debug.log $CONFIGFOLDER/fee_estimates.dat $CONFIGFOLDER/mncache.dat  
   rm -f $COIN_ZIP >/dev/null 2>&1
   cd ~/ >/dev/null
   rm -rf $TMP_FOLDER >/dev/null 2>&1
-  update-2-1-4.sh
+  rm update-2-1-4.sh
 
 $COIN_DAEMON -daemon > /dev/null 2>&1 && sleep 10
   echo -e "Update Done"
