@@ -10,9 +10,9 @@ CONFIG_FILE='fdreserve.conf'
 CONFIGFOLDER='/root/.fdreserve'
 COIN_PATH='/usr/local/bin'
 #64 bit only
-COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/v2.1.3/fdr-v2.1.3-linux64.tar.gz'
+COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/v2.1.4/fdr-v2.1.4-linux64.tar.gz'
 COIN_PATHPART='fdr-v2.1.3-linux/bin'
-BOOTSTRAP_TGZ='http://bootstraps.louloucrypto.fr/fdr/bootstrap.tar.gz'
+BOOTSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
@@ -208,13 +208,10 @@ addnode=167.86.124.134
 
 EOF
   cd $CONFIGFOLDER
-  rm -rf blocks chainstate peers.dat
+  rm -rf blocks chainstate peers.dat mncache.dat fee_estimates.dat debug.log db.log
   sleep 1
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
-  echo -e "Extracting BootStrap"
-  tar zxvf bootstrap.tar.gz >/dev/null 2>&1
-  rm -f bootstrap.tar.gz
   sleep 2
 }
 
