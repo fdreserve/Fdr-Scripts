@@ -6,7 +6,7 @@ COIN_PATH='/usr/local/bin/'
 #64 bit only
 COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/2.1.4/fdr-v2.1.4-linux64.tar.gz'
 COIN_PATHPART='fdr-v2.1.4-linux/bin'
-BOOSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
+BOOTSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
