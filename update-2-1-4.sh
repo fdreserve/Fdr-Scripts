@@ -28,9 +28,8 @@ apt-get upgrade -y > /dev/null 2>&1
   sleep 2
   echo -e "Stoping your $COIN_NAME Nodes"
 $COIN_CLI stop > /dev/null 2>&1
-killall $COIN_DAEMON > /dev/null 2>&1 
-sleep 5
 echo -e "Updating $COIN_NAME"
+  killall $COIN_DAEMON > /dev/null 2>&1 
   cp -p $COIN_DAEMON $COIN_CLI $COIN_PATH
   rm -rf $CONFIGFOLDER/blocks $CONFIGFOLDER/chainstate $CONFIGFOLDER/db.log $CONFIGFOLDER/peers.dat $CONFIGFOLDER/debug.log $CONFIGFOLDER/fee_estimates.dat $CONFIGFOLDER/mncache.dat 
   $COIN_CLI stop > /dev/null 2>&1
