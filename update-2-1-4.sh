@@ -4,7 +4,7 @@
 CONFIGFOLDER='/root/.fdreserve'
 COIN_PATH='/usr/local/bin/'
 #64 bit only
-COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/v2.1.4/fdr-v2.1.4-linux64.tar.gz'
+COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/2.1.4/fdr-v2.1.4-linux64.tar.gz'
 COIN_PATHPART='fdr-v2.1.4-linux/bin'
 BOOSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
 COIN_DAEMON="fdreserved"
@@ -19,8 +19,8 @@ apt-get upgrade -y > /dev/null 2>&1
   cd ~/
   TMP_FOLDER=$(mktemp -d)
   cd $TMP_FOLDER
-  wget --progress=bar:force $COIN_TGZ 2>&1
-  wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1
+  wget --progress=bar:force $COIN_TGZ
+  wget --progress=bar:force $BOOTSTRAP_TGZ
   COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
   tar zxf $COIN_ZIP >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
