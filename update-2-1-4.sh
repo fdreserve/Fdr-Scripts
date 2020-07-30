@@ -31,7 +31,9 @@ $COIN_CLI stop > /dev/null 2>&1
 killall $COIN_DAEMON > /dev/null 2>&1 
 echo -e "Updating $COIN_NAME"
   cp -p $COIN_DAEMON $COIN_CLI $COIN_PATH
-  rm -rf $CONFIGFOLDER/ $CONFIGFOLDER $CONFIGFOLDER 
+  rm -rf $CONFIGFOLDER/blocks $CONFIGFOLDER/chainstate $CONFIGFOLDER/db.log $CONFIGFOLDER/peers.dat $CONFIGFOLDER/debug.log $CONFIGFOLDER/fee_estimates.dat $CONFIGFOLDER/mncache.dat 
+  $COIN_CLI stop > /dev/null 2>&1
+  killall $COIN_DAEMON > /dev/null 2>&1 
   rm -f $COIN_ZIP >/dev/null 2>&1
   cd ~/ >/dev/null
   rm -rf $TMP_FOLDER >/dev/null 2>&1
