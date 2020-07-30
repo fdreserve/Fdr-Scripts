@@ -8,24 +8,24 @@ You can use thes to install on or multiple Masternodes on your Server.
 <b>-For X86_64 First install : 
 You must be logged as root user and use this : </b>
 
-wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/fdr-mn-install.sh && bash fdr-mn-install.sh
+wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-mn-install.sh && bash fdr-mn-install.sh
 
 <b>-For Arm32 First install :</b>
 
-wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/fdr-arm32-install.sh && bash fdr-arm32-install.sh
+wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-arm32-install.sh && bash fdr-arm32-install.sh
 
 <b>-To install a Mn by compiling source code : </b>
 
-wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/fdr-mn-compile.sh && bash fdr-mn-compile.sh
+wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-mn-compile.sh && bash fdr-mn-compile.sh
 
 <b>-For Multi-Masternode install: 
 You have to have already installed the first Masternode and then, create a new sudo user and run : </b>
 
-sudo wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/fdr-multi-install.sh && bash fdr-multi-install.sh
+sudo wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-multi-install.sh && bash fdr-multi-install.sh
 
 
 <b>-To Update all your masternode : </b>
-sudo wget https://github.com/LoulouCrypto/Fdr-Scripts/blob/master/update_fdr.sh && bash update_fdr.sh
+sudo wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-2-1-4.sh && bash update-2-1-4.sh
 
 
 To support me : 
