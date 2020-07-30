@@ -22,7 +22,7 @@ apt-get upgrade -y > /dev/null 2>&1
   wget --progress=bar:force $COIN_TGZ
   wget --progress=bar:force $BOOTSTRAP_TGZ
   COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-  tar zxf $COIN_ZIP >/dev/null 2>&1
+  tar zxf $COIN_ZIP
   chmod +x $COIN_DAEMON $COIN_CLI
   mv bootstrap.dat $CONFIGFOLDER
   sleep 2
