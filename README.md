@@ -27,9 +27,11 @@ sudo wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/fdr-
 <b>-To Update your masternode : </b>
 
 Run as root :
+
 wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-2-1-4.sh && bash update-2-1-4.sh
 
 if you have multi masternode on the same vps, run in each users : 
+
 wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-multi-2-1-4.sh && bash update-multi-2-1-4.sh
 
 
