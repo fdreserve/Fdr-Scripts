@@ -211,9 +211,6 @@ sleep 1
   rm -rf blocks chainstate peers.dat mncache.dat fee_estimates.dat debug.log db.log
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
-  echo -e "Extracting BootStrap"
-  tar zxvf bootstrap.tar.gz >/dev/null 2>&1
-  rm -f bootstrap.tar.gz 
   cd ~/
   sleep 2
 }
