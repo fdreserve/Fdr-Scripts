@@ -25,6 +25,7 @@ You have to have already installed the first Masternode and then, create a new s
 
 
 <b>-To Update your masternode to 2.1.4 : </b>
+
 <b>-It's a mandatory Update </b>
 
 
