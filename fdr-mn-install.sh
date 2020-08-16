@@ -11,7 +11,7 @@ CONFIGFOLDER='/root/.fdreserve'
 COIN_PATH='/usr/local/bin'
 #64 bit only
 COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/2.1.4/fdr-v2.1.4-linux64.tar.gz'
-COIN_PATHPART='fdr-v2.1.3-linux/bin'
+COIN_PATHPART='fdr-v2.1.4-linux/bin'
 BOOTSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
@@ -199,12 +199,10 @@ masternodeaddr=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 # Seed Nodes
-addnode=167.86.119.223
-addnode=164.68.96.160
-addnode=167.86.124.134
-addnode=167.86.93.65
-addnode=164.68.121.216
-addnode=167.86.124.134
+addnode=94.237.99.107
+addnode=94.237.92.91
+addnode=94.237.98.104
+addnode=94.237.98.129
 
 EOF
   cd $CONFIGFOLDER
