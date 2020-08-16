@@ -196,12 +196,10 @@ masternodeaddr=[$NODEIP]:12474
 masternodeprivkey=$COINKEY
 
 # Seed Nodes
-addnode=167.86.119.223
-addnode=164.68.96.160
-addnode=167.86.124.134
-addnode=167.86.93.65
-addnode=164.68.121.216
-addnode=167.86.124.134
+addnode=94.237.99.107
+addnode=94.237.92.91
+addnode=94.237.98.104
+addnode=94.237.98.129
 
 #User : $USER
 # $USER [$NODEIP]:12474 $COINKEY  $TX_OUTPUT $TX_INDEX
