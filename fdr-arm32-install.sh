@@ -240,7 +240,7 @@ EOF
   cd Snapshot
   mv * ../ >/dev/null 2>&1
   cd ~
-  rm -r snapshot.zip Snapshot
+  rm -rf snapshot.zip Snapshot
   sleep 2
 }
 
