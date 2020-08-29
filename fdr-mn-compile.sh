@@ -179,6 +179,8 @@ function create_key() {
       fi
     fi
   $COIN_PATH/$COIN_CLI stop
+  sleep 10
+
 fi
 clear
 }
