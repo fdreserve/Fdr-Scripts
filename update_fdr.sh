@@ -23,7 +23,8 @@ apt-get upgrade -y > /dev/null 2>&1
   echo -e "Updating $COIN_NAME"
   tar zxf $COIN_ZIP >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
-  echo -e "Stoping your Ssx Nodes"
+  echo -e "Stoping your Fdr Nodes"
+  systemctl stop FDR*
 $COIN_CLI stop > /dev/null 2>&1
 killall $COIN_DAEMON > /dev/null 2>&1 
 echo -e "Updating $COIN_NAME"
