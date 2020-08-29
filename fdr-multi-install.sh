@@ -217,10 +217,14 @@ addnode=167.86.86.19
 EOF
 sleep 1
   cd /home/$USER/.fdreserve
-  rm -rf blocks chainstate peers.dat mncache.dat fee_estimates.dat debug.log db.log
+  rm -rf blocks chainstate peers.dat
+  sleep 1
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
-  cd ~/
+  unzip snapshot.zip >/dev/null 2>&1
+  cd Snapshot
+  mv * ../ >/dev/null 2>&1
+  cd ~
   sleep 2
 }
 
