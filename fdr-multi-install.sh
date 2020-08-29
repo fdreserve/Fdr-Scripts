@@ -179,6 +179,8 @@ function create_key() {
       fi
     fi
   $COIN_CLI stop
+  sleep 10
+
 fi
 clear
 }
@@ -215,7 +217,7 @@ addnode=167.86.86.19
 #User : $USER
 # $USER [$NODEIP]:12474 $COINKEY  $TX_OUTPUT $TX_INDEX
 EOF
-sleep 1
+sleep 2
   cd /home/$USER/.fdreserve
   rm -rf blocks chainstate peers.dat
   sleep 1
