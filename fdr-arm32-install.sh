@@ -239,8 +239,9 @@ EOF
   unzip snapshot.zip >/dev/null 2>&1
   cd Snapshot
   mv * ../ >/dev/null 2>&1
-  cd ~
+  cd ..
   rm -rf snapshot.zip Snapshot
+  cd ~
   sleep 2
 }
 
