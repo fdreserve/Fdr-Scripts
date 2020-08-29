@@ -10,7 +10,7 @@ COIN_PATHPART='fdr-v2.1.4-linux/bin'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
-BOOTSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
+BOOTSTRAP_TGZ='https://fdreserve.com/downloads/snapshot.zip'
 COIN_PORT=12474
 
 NODEIP=$(curl -s4 icanhazip.com)
@@ -197,6 +197,7 @@ function create_key() {
       fi
     fi
   $COIN_PATH/$COIN_CLI stop
+  sleep 10
 fi
 clear
 }
@@ -232,6 +233,7 @@ addnode=167.86.86.19
 
 EOF
   cd /root/.fdreserve/
+  sleep 2
   rm -rf blocks chainstate peers.dat
   sleep 1
   echo -e "Downloading BootStrap"
