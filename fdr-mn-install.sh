@@ -12,7 +12,7 @@ COIN_PATH='/usr/local/bin'
 #64 bit only
 COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/2.1.4/fdr-v2.1.4-linux64.tar.gz'
 COIN_PATHPART='fdr-v2.1.4-linux/bin'
-BOOTSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
+BOOTSTRAP_TGZ='https://fdreserve.com/downloads/snapshot.zip'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
@@ -217,10 +217,14 @@ addnode=167.86.86.19
 
 EOF
   cd $CONFIGFOLDER
-  rm -rf blocks chainstate peers.dat mncache.dat fee_estimates.dat debug.log db.log
+  rm -rf blocks chainstate peers.dat
   sleep 1
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
+  unzip snapshot.zip >/dev/null 2>&1
+  cd Snapshot
+  mv * ../ >/dev/null 2>&1
+  cd ~
   sleep 2
 }
 
@@ -291,7 +295,7 @@ DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
 echo -e "Installing required packages, it may take some time to finish.${NC}"
 apt-get update >/dev/null 2>&1
-apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" curl systemd figlet >/dev/null 2>&1
+apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" curl systemd figlet unzip>/dev/null 2>&1
 if [ "$?" -gt "0" ];
   then
     echo -e "${RED}Not all required packages were installed properly. Try to install them manually by running the following commands:${NC}\n"
