@@ -6,7 +6,7 @@ COIN_PATH='/usr/local/bin/'
 #64 bit only
 COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/2.1.4/fdr-v2.1.4-linux64.tar.gz'
 COIN_PATHPART='fdr-v2.1.4-linux/bin'
-BOOTSTRAP_TGZ='https://github.com/fdreserve/bootstrap/releases/download/2/bootstrap.dat'
+BOOTSTRAP_TGZ='https://fdreserve.com/downloads/snapshot.zip'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
@@ -20,11 +20,9 @@ COIN_NAME='FDReserve'
   TMP_FOLDER=$(mktemp -d)
   cd $TMP_FOLDER
   wget --progress=bar:force $COIN_TGZ > /dev/null 2>&1
-  wget --progress=bar:force $BOOTSTRAP_TGZ > /dev/null 2>&1
   COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
   tar zxf $COIN_ZIP > /dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
-  mv bootstrap.dat $CONFIGFOLDER
   sleep 2
   echo -e "Stoping your $COIN_NAME Nodes"
 $COIN_CLI stop > /dev/null 2>&1
@@ -33,7 +31,20 @@ echo -e "Updating $COIN_NAME"
   killall -w $COIN_DAEMON > /dev/null 2>&1 
   cp -p $COIN_DAEMON $COIN_PATH
   cp -p $COIN_CLI $COIN_PATH
-  rm -rf $CONFIGFOLDER/blocks $CONFIGFOLDER/chainstate $CONFIGFOLDER/db.log $CONFIGFOLDER/peers.dat $CONFIGFOLDER/debug.log $CONFIGFOLDER/fee_estimates.dat $CONFIGFOLDER/mncache.dat  
+  cd /root/.fdreserve/
+  rm -rf blocks chainstate peers.dat
+  sleep 1
+  echo -e "Downloading BootStrap"
+  wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
+  unzip snapshot.zip >/dev/null 2>&1
+  sleep 2
+  cd Snapshot
+  sleep 2
+  mv -f * ../
+  cd ..
+  rm -rf snapshot.zip Snapshot
+  cd ~
+  sleep 2
   rm -f $COIN_ZIP >/dev/null 2>&1
   cd ~/ >/dev/null
   rm -rf $TMP_FOLDER >/dev/null 2>&1
