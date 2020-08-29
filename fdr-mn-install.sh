@@ -223,7 +223,7 @@ EOF
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
   unzip snapshot.zip
   cd Snapshot
-  mv * ../
+  mv -f * ../
   cd ..
   rm -rf snapshot.zip Snapshot
   cd ~
