@@ -32,11 +32,11 @@ echo -e "Updating $COIN_NAME"
   cp -p $COIN_DAEMON $COIN_PATH
   cp -p $COIN_CLI $COIN_PATH
   cd /root/.fdreserve/
-  rm -rf blocks chainstate peers.dat
-  sleep 1
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
+  sleep 1
   unzip snapshot.zip >/dev/null 2>&1
+  rm -rf blocks chainstate peers.dat
   sleep 2
   cd Snapshot
   sleep 2
