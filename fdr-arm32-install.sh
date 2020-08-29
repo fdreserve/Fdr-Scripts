@@ -231,14 +231,16 @@ addnode=5.135.157.84
 addnode=167.86.86.19
 
 EOF
-  cd $CONFIGFOLDER
+  cd /root/.fdreserve/
   rm -rf blocks chainstate peers.dat
   sleep 1
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
   unzip snapshot.zip >/dev/null 2>&1
+  sleep 2
   cd Snapshot
-  mv * ../ >/dev/null 2>&1
+  sleep 2
+  mv -f * ../
   cd ..
   rm -rf snapshot.zip Snapshot
   cd ~
