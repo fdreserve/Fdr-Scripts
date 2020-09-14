@@ -35,17 +35,12 @@ echo -e "Updating $COIN_NAME"
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
   sleep 1
-  unzip snapshot.zip >/dev/null 2>&1
   rm -rf blocks chainstate peers.dat
   sleep 2
-  cd Snapshot
-  sleep 2
-  mv -f * ../
-  cd ..
-  rm -rf snapshot.zip Snapshot
+  unzip snapshot.zip >/dev/null 2>&1
+  rm -f snapshot.zip
   cd ~
   sleep 2
-  rm -f $COIN_ZIP >/dev/null 2>&1
   cd ~/ >/dev/null
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   rm update-2-1-4.sh
