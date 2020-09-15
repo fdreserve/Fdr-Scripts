@@ -222,7 +222,7 @@ EOF
   sleep 1
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
-  unzip snapshot.zip >/dev/null 2>&1
+  unzip snapshot.zip
   sleep 2
   rm -f snapshot.zip
   cd ~
