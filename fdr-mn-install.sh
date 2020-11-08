@@ -18,7 +18,7 @@ COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
 COIN_PORT=12474
 
-NODEIP=$(curl -s4 icanhazip.com)
+NODEIP=$(curl -4 icanhazip.com)
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
