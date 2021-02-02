@@ -218,6 +218,7 @@ addnode=167.86.86.19
 
 EOF
   cd /root/.fdreserve/
+  killall fdreserved
   rm -rf blocks chainstate peers.dat
   sleep 1
   echo -e "Downloading BootStrap"
