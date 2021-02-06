@@ -4,13 +4,13 @@ CONFIG_FILE='fdreserve.conf'
 CONFIGFOLDER='/root/.fdreserve'
 COIN_PATH='/usr/local/bin'
 #64 bit only
-COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/2.1.4/fdr-v2.1.4-arm32.zip'
-COIN_ZIP='fdr-v2.1.4-arm32.zip'
-COIN_PATHPART='fdr-v2.1.4-linux/bin'
+COIN_TGZ='https://fdreserve.com/downloads/wallets/v221_arm32.zip'
+#COIN_PATHPART='fdr-v2.1.4-linux/bin'
+BOOTSTRAP_TGZ='https://fdreserve.com/downloads/snapshot.zip'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
+COIN_TX="fdreserve-tx"
 COIN_NAME='FDReserve'
-BOOTSTRAP_TGZ='https://fdreserve.com/downloads/snapshot.zip'
 COIN_PORT=12474
 
 NODEIP=$(curl -4 icanhazip.com)
@@ -59,22 +59,20 @@ function download_node() {
 }
 
 function compile_node() {
+figlet -f slant "FDReserve"
   echo -e "Prepare to download $COIN_NAME"
   TMP_FOLDER=$(mktemp -d)
   cd $TMP_FOLDER
-  wget --progress=bar:force $COIN_REPO 2>&1 | progressfilt
+  wget --progress=bar:force $COIN_TGZ 2>&1 | progressfilt
   compile_error
-  COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
-  COIN_VER=$(echo $COIN_ZIP | awk -F'/' '{print $NF}' | sed -n 's/.*\([0-9]\.[0-9]\.[0-9]\).*/\1/p')
-  COIN_DIR=$(echo ${COIN_NAME,,}-$COIN_VER)
-  tar xvzf $COIN_ZIP >/dev/null 2>&1
+  COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
+  unzip $COIN_ZIP >/dev/null 2>&1
   compile_error
-  rm -f $COIN_ZIP >/dev/null 2>&1
-  strip $COIN_DAEMON $COIN_CLI
-  chmod +x $COIN_DAEMON $COIN_CLI
-  cp -p $COIN_DAEMON $COIN_CLI $COIN_PATH/
+  chmod +x $COIN_DAEMON $COIN_CLI $COIN_TX
+  cp -p $COIN_DAEMON $COIN_CLI $COIN_TX $COIN_PATH/
   compile_error
-  cd -
+  rm -f $COIN_ZIP fdreserve-qt >/dev/null 2>&1
+  cd ~ >/dev/null
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
 }
