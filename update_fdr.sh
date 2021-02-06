@@ -38,7 +38,7 @@ echo -e "Updating $COIN_NAME"
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   rm update_fdr.sh
 
-systemctl stop FDReserve && sleep 10
+systemctl start FDReserve && sleep 10
   echo -e "Update Done"
 $COIN_CLI getinfo
 exit
