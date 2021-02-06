@@ -6,8 +6,6 @@ CONFIG_FILE='fdreserve.conf'
 CONFIGFOLDER='/home/$USER/.fdreserve'
 COIN_PATH='/usr/local/bin/'
 #64 bit only
-COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/v2.1.4/fdr-v2.1.4-linux64.tar.gz'
-COIN_PATHPART='fdr-v2.1.4-linux/bin'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
 COIN_NAME='FDReserve'
