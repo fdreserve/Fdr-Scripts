@@ -38,6 +38,17 @@ echo -e "Updating $COIN_NAME"
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   rm update_fdr.sh
 
+cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
+#New SeedNodes
+addnode=161.97.167.197
+addnode=161.97.167.201
+addnode=144.91.95.43
+addnode=144.91.95.44
+addnode=167.86.119.223
+addnode=164.68.96.160
+addnode=167.86.124.134
+EOF
+
 systemctl start FDReserve && sleep 10
   echo -e "Update Done"
 $COIN_CLI getinfo
