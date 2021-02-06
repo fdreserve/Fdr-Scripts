@@ -38,7 +38,7 @@ echo -e "Updating $COIN_NAME"
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   rm update_fdr.sh
 
-cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
+cat << EOF >> $CONFIGFOLDER/fdreserve.conf
 #New SeedNodes
 addnode=161.97.167.197
 addnode=161.97.167.201
