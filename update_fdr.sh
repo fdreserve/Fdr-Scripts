@@ -52,7 +52,7 @@ addnode=164.68.96.160
 addnode=167.86.124.134
 EOF
 
-systemctl start FDReserve && sleep 10
+systemctl start FDReserve && sleep 30
   echo -e "Update Done"
 $COIN_CLI getinfo
 exit
