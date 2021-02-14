@@ -42,6 +42,8 @@ echo -e "Updating $COIN_NAME"
   cd ~/
 
 cat << EOF >> $CONFIGFOLDER/fdreserve.conf
+txindex=1
+
 #New SeedNodes
 addnode=161.97.167.197
 addnode=161.97.167.201
