@@ -31,6 +31,7 @@ echo -e "Updating $COIN_NAME"
   killall -w $COIN_DAEMON > /dev/null 2>&1 
   cp -p $COIN_DAEMON $COIN_PATH
   cp -p $COIN_CLI $COIN_PATH
+  cp -p $COIN_TX $COIN_PATH
   cd /root/.fdreserve/
   echo -e "Downloading BootStrap"
   wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
