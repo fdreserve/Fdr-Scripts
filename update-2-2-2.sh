@@ -4,11 +4,11 @@
 CONFIGFOLDER='/root/.fdreserve'
 COIN_PATH='/usr/local/bin/'
 #64 bit only
-COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/2.1.4/fdr-v2.1.4-linux64.tar.gz'
-COIN_PATHPART='fdr-v2.1.4-linux/bin'
+COIN_TGZ='https://github.com/fdreserve/fdr-blockchain/releases/download/V2.2.2/2021-02-23_fdreserve-qt_v222_linux64.zip'
 BOOTSTRAP_TGZ='https://fdreserve.com/downloads/snapshot.zip'
 COIN_DAEMON="fdreserved"
 COIN_CLI="fdreserve-cli"
+COIN_TX="fdreserve-tx"
 COIN_NAME='FDReserve'
 
 #update lunch
@@ -22,7 +22,7 @@ COIN_NAME='FDReserve'
   wget --progress=bar:force $COIN_TGZ > /dev/null 2>&1
   COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
   tar zxf $COIN_ZIP > /dev/null 2>&1
-  chmod +x $COIN_DAEMON $COIN_CLI
+  chmod +x $COIN_DAEMON $COIN_CLI $COIN_TX
   sleep 2
   echo -e "Stoping your $COIN_NAME Nodes"
 $COIN_CLI stop > /dev/null 2>&1
@@ -43,9 +43,9 @@ echo -e "Updating $COIN_NAME"
   sleep 2
   cd ~/ >/dev/null
   rm -rf $TMP_FOLDER >/dev/null 2>&1
-  rm update-2-1-4.sh
+  rm update-2-2-2.sh
 
-$COIN_DAEMON -daemon > /dev/null 2>&1 && sleep 10
+systemctl start FDReserve
   echo -e "Update Done"
 $COIN_CLI getinfo
 exit
