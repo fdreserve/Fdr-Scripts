@@ -35,7 +35,7 @@ Run as root :
 
 if you have multi masternode on the same vps, run in each users : 
 
-<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-multi-2-1-4.sh && bash update-multi-2-1-4.sh</code>
+<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-multi-2-2-2.sh && bash update-multi-2-2-2.sh</code>
 
 
 To support me : 
