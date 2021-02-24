@@ -24,6 +24,7 @@ unzip snapshot
 sleep 2
 rm snapshot
 cd
+rm update-2-2-2.sh
  echo -e "Starting Node"
 sudo systemctl start FDReserve
 sleep 30
