@@ -20,9 +20,10 @@ sleep 2
  echo -e "Bootstraping Node"
 wget https://fdreserve.com/downloads/snapshot.zip
 rm -r blocks chainstate
-unzip snapshot
+unzip snapshot.zip
 sleep 2
-rm snapshot
+rm snapshot.zip
+sleep 2
 cd
 rm update-2-2-2.sh
  echo -e "Starting Node"
