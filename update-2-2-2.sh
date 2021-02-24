@@ -21,7 +21,7 @@ COIN_NAME='FDReserve'
   cd $TMP_FOLDER
   wget --progress=bar:force $COIN_TGZ > /dev/null 2>&1
   COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-  tar zxf $COIN_ZIP > /dev/null 2>&1
+  unzip $COIN_ZIP > /dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI $COIN_TX
   sleep 2
   echo -e "Stoping your $COIN_NAME Nodes"
