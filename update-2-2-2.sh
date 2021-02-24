@@ -34,7 +34,7 @@ echo -e "Updating $COIN_NAME"
   cp -p $COIN_TX $COIN_PATH
   cd /root/.fdreserve/
   echo -e "Downloading BootStrap"
-  wget --progress=bar:force $BOOTSTRAP_TGZ 2>&1 | progressfilt
+  wget $BOOTSTRAP_TGZ
   sleep 1
   rm -rf blocks chainstate peers.dat
   sleep 2
