@@ -18,6 +18,8 @@ sleep 2
 cd .fdreserve
 sleep 2
 echo -e "Bootstraping Node"
+rm snapshot.zip
+sleep 2
 wget https://fdreserve.com/downloads/snapshot.zip
 rm -r blocks chainstate
 unzip snapshot.zip
