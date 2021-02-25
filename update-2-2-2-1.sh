@@ -7,7 +7,7 @@ wget https://github.com/fdreserve/fdr-blockchain/releases/download/V2.2.2/2021-0
 sleep 1
 unzip 2021-02-25_fdreserve_v2221_Linux64.zip
 sleep 1
-rm 2021-02-23_fdreserve-qt_v222_linux64.zip fdreserve-qt
+rm 2021-02-25_fdreserve_v2221_Linux64.zip fdreserve-qt
 sleep 1
 chmod +x fdreserve*
 sleep 1
