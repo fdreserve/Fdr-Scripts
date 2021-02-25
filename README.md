@@ -31,7 +31,7 @@ You have to have already installed the first Masternode and then, create a new s
 
 Run as root :
 
-<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-2-1-4.sh && bash update-2-1-4.sh</code>
+<code>wget https://raw.githubusercontent.com/LoulouCrypto/Fdr-Scripts/master/update-2-2-2-1.sh && bash update-2-2-2-1.sh</code>
 
 if you have multi masternode on the same vps, run in each users : 
 
