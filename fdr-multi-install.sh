@@ -202,8 +202,15 @@ addnode=161.97.167.201
 addnode=144.91.95.43
 addnode=144.91.95.44
 addnode=167.86.119.223
-addnode=164.68.96.160
+addnode=64.68.96.160
 addnode=167.86.124.134
+addnode=[2a02:c207:2027:2245::1]
+addnode=[2a02:c207:2027:5644::1]
+addnode=[2a02:c207:2027:9123::1]
+addnode=[2a02:c207:2051:9094::1]
+addnode=[2a02:c207:2051:9093::1]
+addnode=[2a02:c206:2051:9083::1]
+addnode=[2a02:c206:2051:9077::1]
 
 #User : $USER
 # $USER [$NODEIP]:12474 $COINKEY  $TX_OUTPUT $TX_INDEX
